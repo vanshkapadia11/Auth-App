@@ -15,7 +15,7 @@ export function AuthProvider({ children }) {
     const unsubscribe = onAuthStateChanged(auth, async (currentUser) => {
       if (currentUser) {
         // Get user data from Firestore
-        const userDoc = await getDoc(doc(db, "users", currentUser.uid));
+        const userDoc = await getDoc(doc(db, "users", currentUser.uid)); // Bhai Ye Doc Wali Chiz Important Hai!!! -- Data Leta Hai Aur Phir Approve Karta Hai!!
         if (userDoc.exists()) {
           setUser({ ...currentUser, ...userDoc.data() });
           console.log(currentUser, userDoc.data());
