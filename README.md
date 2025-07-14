@@ -22,20 +22,4 @@ A simple and clean authentication system built with **React**, **Firebase Authen
 - [React Router v6](https://reactrouter.com/)
 - [Tailwind CSS](https://tailwindcss.com/)
 
----
-
-## 🛠 Folder Thingy!!
-
-src/
-│
-├── context/
-│ └── AuthContext.jsx # Auth logic (context + Firebase)
-│
-├── pages/
-│ ├── Signup.jsx # Signup form
-│ ├── Login.jsx # Login form
-│ └── Dashboard.jsx # Protected page
-│
-├── firebase.js # Firebase config
-├── App.jsx # Routing + protected routes
-└── main.jsx # Entry point
+Bro This Is The Link Of The Website ----> https://loopauthapp.netlify.app/
