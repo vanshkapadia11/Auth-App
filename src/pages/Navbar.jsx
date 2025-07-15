@@ -1,7 +1,9 @@
 import React from "react";
 import { useState, useEffect } from "react";
+import { useAuth } from "../context/AuthContext";
 
 const Navbar = () => {
+  const { user } = useAuth();
   const [isDark, setIsDark] = useState(() => {
     return localStorage.theme === "dark";
   });
@@ -13,6 +15,7 @@ const Navbar = () => {
       document.documentElement.classList.remove("dark");
       localStorage.setItem("theme", "light");
     }
+    // console.log(user);
   }, [isDark]);
   return (
     <>
@@ -26,7 +29,16 @@ const Navbar = () => {
           <div className="">
             <nav className="">
               <ul className="flex items-center text-sm font-semibold space-x-4 justify-center ring-1 ring-inset dark:bg-[#242424] dark:ring-[#2a2a2a] ring-[#e8e8e8] bg-[#f9f9f9] transition-all py-2 px-4 rounded-xl">
-                <li>HOME</li>
+                {user ? (
+                  <>
+                    <li className="uppercase">home</li>
+                  </>
+                ) : (
+                  <>
+                    <li className="uppercase">signup</li>
+                    <li className="uppercase">login</li>
+                  </>
+                )}
                 <li className="link">
                   <span
                     className="material-symbols-rounded text-lg font-semibold"
